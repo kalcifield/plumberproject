@@ -40,7 +40,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Kezdőlap</a></li>
                     <li><a href="services.html">Szolgáltatások</a></li>
-                    <li><a href="portfolio.html">Gy.i.k.</a></li>
+                    <li><a href="faq.php">Gy.i.k.</a></li>
                     <li><a href="pricing.php">Árak</a></li>
                     <li><a href="contact.html">Küldj üzenetet</a></li>
                 </ul>
