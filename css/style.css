@@ -9,6 +9,7 @@ Do not remove the back-link in this web template
 @import url('font-awesome.css');  
 @import url('animate.css');
 
+
 body {
 	font-family:'Open Sans', Arial, sans-serif;
 	font-size:14px;
@@ -88,6 +89,7 @@ display:none;
 header .navbar {
     margin-bottom: 0;
 }
+
 
 .navbar-default {
     border: none;
@@ -277,6 +279,11 @@ header ul.nav li ul li a {
   font-size: 14px;
   font-weight: normal;
 }
+.navbar .nav li:hover {
+	box-shadow: 0 0 3px #515151;
+	background: #ffc845;
+
+}
 
 .navbar .nav a:hover {
 	background:none;
@@ -288,7 +295,6 @@ header ul.nav li ul li a {
 	color: #ffffff !important;
 	border: 1px solid #055999 !important;
 	background: #055999;
-	/*active bug */
 }
 
 .navbar .nav > .active > a:active,.navbar .nav > .active > a:focus {
@@ -337,6 +343,7 @@ ul.nav li.dropdown a {
 color: #fff;
 margin: 30px 0 3px;
 display: inline-block;
+
 }
  
 #banner{
@@ -346,7 +353,6 @@ display: inline-block;
 	margin:0;
 	padding:0;
 	float: left;
-	width: 100%;
 }
 
 /*  Sliders
@@ -664,7 +670,7 @@ margin: 10px 0 0 0;
 #inner-headline h2.pageTitle{	
 	color: #055999;
 	padding: 5px 0;
-	text-align:center;
+	text-align:left;
 	display:block;
 	font-size: 40px;
 	font-weight: 700;
@@ -1848,6 +1854,3 @@ padding-top: 3px;
 			margin: 1%;
 		}
     }
-	
-	
- 
