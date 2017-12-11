@@ -1,4 +1,4 @@
-<footer>
+    <footer>
 		<div id="sub-footer">
 			<div class="container">
 				<div class="row">
@@ -6,6 +6,7 @@
 						<div class="copyright">
 							<p>
 								<span>Copyright &copy; 2017 All rights reserved.</span>
+                                <span id="deletable">&copy; Home Services 2018 All right reserved. By <a href="http://webthemez.com" target="_blank">WebThemez</a></span>
 							</p>
 						</div>
 					</div>
@@ -21,7 +22,6 @@
 			</div>
 		</div>
 	</footer>
-	</div>
 	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 
 </body>

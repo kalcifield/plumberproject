@@ -1,25 +1,49 @@
 <?php
 
+require '../vendor/PHPMailer/src/PHPMailer.php';
+require '../vendor/PHPMailer/src/SMTP.php';
+require '../vendor/PHPMailer/src/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 if( empty($_POST['name']) ||
     empty($_POST['email']) ||
     empty($_POST['phone']) ||
     empty($_POST['message']) ||
     !filter_var($_POST['email'].FILTER_VALIDATE_EMAIL))
-    {
-        echo "No arguments Provided";
-        return false;
-    }
+{
+    echo "No arguments Provided";
+    return false;
+}
 
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $phone = strip_tags(htmlspecialchars($_POST['phone']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
 
-// Create the email and send the message
-$to = 'bezilaszlo95@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-$email_subject = "Duguláselhárítás webüzenet:  $name";
-$email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
-$headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-$headers .= "Reply-To: $email_address";
-mail($to,$email_subject,$email_body,$headers);
-return true;
+$mail = new PHPMailer();
+$mail->isSMTP();                                      // Set mailer to use SMTP
+$mail->Host = 'cpanel14.tarhelypark.hu';  // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->Username = 'info@dugulastelharitunk.hu';                 // SMTP username
+$mail->Password = '8o!,Rx6A)eP)0a';                           // SMTP password
+$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 465;                                    // TCP port to connect to
+
+//Recipients
+$mail->setFrom('info@dugulastelharitunk.hu', 'Dugulas webmail');
+$mail->addAddress('bezilaszlo95@gmail.com', 'Joe User');     // Add a recipient
+
+//Content
+$mail->isHTML(true);                                  // Set email format to HTML
+$mail->Subject = 'Dugulaselharitas webmail';
+$mail->Body    = "<b>Név:</b> {$name} <br> <b>Email:</b> {$email_address} <br> 
+<b>Telefonszám:</b> {$phone} <br><b>Üzenet:</b> {$message}";
+
+if(!$mail->send()) {
+    echo 'A levél nem küldhető el.';
+    echo 'PHPMailer hiba: ' . $mail->ErrorInfo;
+} else {
+    echo 'A levél elküldve.';
+}

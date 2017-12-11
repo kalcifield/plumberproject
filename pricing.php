@@ -59,8 +59,30 @@ include_once 'header.php'
                     <td>11 000 Ft +áfa</td>
                 </tr>
             </table>
+
+            <p>A megadott alapár <i>kizárólag magányszemélyekre</i> vonatkozik!</p>
             <br>
 
+            <table class="table">
+                <tr>
+                    <th>Munkanapokon Budapest területén belül 7.00 - 19.00 óra között</th>
+                    <td>Ingyenes kiszállás</td>
+                </tr>
+                <tr>
+                    <th>Hétvégén és ünnepnapokon Budapest területén belül 7.00 - 19.00 óra között</th>
+                    <td>2000 Ft +áfa</td>
+                </tr>
+                <tr>
+                    <th>Budapest területén belül 19.00 - 7.00 óra között</th>
+                    <td>3000 Ft +áfa</td>
+                </tr>
+            </table>
+
+            <p>A feltüntetett áraink az áfát nem tartalmazzák. Az általunk elvégzett munkálatokról minden esetben
+                számlát állítunk ki, melyet Ön benyújthat a biztosítója felé.</p>
+
+
+            <br>
 
         </div>
     </section>

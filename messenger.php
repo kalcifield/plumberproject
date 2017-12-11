@@ -27,11 +27,11 @@ include_once 'header.php'
                 <div class="col-md-5">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                    <form action="mail/contact_me.php" id="contactForm">
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Teljes név</label>
-                                <input class="form-control" id="name" type="text" placeholder="" required="required"
+                                <input class="form-control" name="name" type="text" placeholder="" required="required"
                                        data-validation-required-message="Please enter your name.">
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -39,7 +39,7 @@ include_once 'header.php'
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Email cím</label>
-                                <input class="form-control" id="email" type="email" placeholder=""
+                                <input class="form-control" name="email" type="email" placeholder=""
                                        required="required"
                                        data-validation-required-message="Please enter your email address.">
                                 <p class="help-block text-danger"></p>
@@ -48,7 +48,7 @@ include_once 'header.php'
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Telefonszám</label>
-                                <input class="form-control" id="phone" type="tel" placeholder=""
+                                <input class="form-control" name="phone" type="tel" placeholder=""
                                        required="required"
                                        data-validation-required-message="Please enter your phone number.">
                                 <p class="help-block text-danger"></p>
@@ -57,7 +57,7 @@ include_once 'header.php'
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Üzenet</label>
-                                <textarea class="form-control" id="message" rows="5" placeholder=""
+                                <textarea class="form-control" name="message" rows="5" placeholder=""
                                           required="required"
                                           data-validation-required-message="Please enter a message."></textarea>
                                 <p class="help-block text-danger"></p>
@@ -73,6 +73,8 @@ include_once 'header.php'
             </div>
 
     </section>
+
+    <script src="js/contact_me.js"></script>
 
 <?php
 include_once 'footer.php'
