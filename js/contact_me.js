@@ -6,7 +6,8 @@ $(document).ready(function () {
 
         var url = $(this).attr('action');
         $.post(url, datas, function (data) {
-            alert(data);
+            $('#success').text(data);
+            $('#contactForm')[0].reset();
         })
     });
 
